@@ -1,1 +1,1 @@
-web: gunicorn website.wsgi
+web: python3 manage.py collectstatic && python3 manage.py migrate && gunicorn website.wsgi
