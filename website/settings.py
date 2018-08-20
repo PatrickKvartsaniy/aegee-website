@@ -25,7 +25,7 @@ SECRET_KEY = '(i10givxw9hhefeq_djopaq@5%jt__k_)=txwse3achhoyr30g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","localhost","aegee-website.herokuapp.com"]
 
 
 # Application definition
