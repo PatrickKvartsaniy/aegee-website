@@ -2,57 +2,6 @@
 
 {%block content%}
 
-	<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-	
-		<div class="fh5co-hero">
-			<div class="fh5co-overlay"></div>
-			{% load static%}
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url({% static 'images/img1.jpg'%});">
-				<div class="desc">
-					<div class="container">
-						<div class="col-md-10 col-md-offset-1">
-							<!-- <a href="index.html" id="main-logo"><img src="{% static 'images/logo.svg'%}" alt=""></a> -->
-							<div class="animate-box">
-								<h2>Once you join, you'll never want to leave!</h2>
-								<p>European students forum </p>
-								<p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="/"><img src="{% static 'images/logo2.svg'%}" alt=""></a></h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active"><a href="/">Home</a></li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Events</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">European</a></li>
-									<li><a href="#">Local</a></li>
-								</ul>
-							</li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Join us!</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-
-		<!-- end:header-top -->
-
 
 		<div id="fh5co-feature-product" class="fh5co-section-gray">
 			<div class="container">
@@ -67,6 +16,7 @@
 
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-12 text-center animate-box">
+						{% load static%}
 						<p><img src="{% static 'images/cover_bg_1.jpg'%}" class="img-responsive img-rounded"></p>
 					</div>
 					
@@ -216,97 +166,7 @@
 		
 
 		
-		<div class="fh5co-content-section">
-			<div class="container">
-				<div class="row row-bottom-padded-md">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Our Board</h3>
-						<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p> -->
-					</div>
-				</div>
-			</div>
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-								<img src="{% static 'images/board/president.jpg'%}" alt="user">
-							</figure>
-							<p>Karina Khaisarova <br> <span class="text-mute">President</span></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-									<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>Elina Borkovska <br> <span class="text-mute">Secretary</span></p>							
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-								<img src="{% static 'images/board/external.jpg'%}" alt="user">
-							</figure>
-							<p>Stas Mahula <br> <span class="text-mute">External Relations</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-								<img src="{% static 'images/board/it.jpg'%}" alt="user">
-							</figure>
-							<p>Petro Kvartsianyi <br> <span class="text-mute">IT</span></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-								<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>Anna Zaiats<br> <span class="text-mute">Human Resources</span></p>							
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-									<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>Oleksandr Levchyshen<br> <span class="text-mute">Treasurer</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-									<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>Anna Ilyk <br> <span class="text-mute">Events</span></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-									<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>Olena Silnitska <br> <span class="text-mute">Found Raising</span></p>							
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-team text-center animate-box">
-							<figure>
-									<img src="{% static 'images/board/no-photo.jpeg'%}" alt="user">
-							</figure>
-							<p>alya vykhodtseva <br> <span class="text-mute">Public Relations</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<!-- fh5co-content-section -->
 
 		<div id="fh5co-services-section" class="fh5co-section-gray">
