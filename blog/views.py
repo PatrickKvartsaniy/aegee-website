@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Post
 
 def index(request):
-    return render(request,'blog/blog.html')
+    blog = Post.objects.all().order_by('-date')
+    return render(request,'blog/blog.html',{'blog':blog})

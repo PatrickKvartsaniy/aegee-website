@@ -5,6 +5,7 @@ class Event(models.Model):
     description = models.TextField()
     date = models.DateField()
     type = models.CharField(max_length=256, choices=[('local', 'local'), ('international','international')])
+    link = models.URLField(blank=True)
     image = models.ImageField(upload_to='events',blank=True)
 
     def __str__(self):
