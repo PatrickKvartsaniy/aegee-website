@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ["127.0.0.1","localhost","aegee-website.herokuapp.com"]
 
 INSTALLED_APPS = [
     'suit',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,17 +87,28 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+if os.getenv('db') == 'production':
+    db = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': "postgres",
+        "USER": "postgres",
+        "HOST": "db",
+        "PORT": "5432",
+    }
+
+db = {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': "aegee",
+    "USER": "patrick",
+    "PASSWORD": "erasmusmundus",
+    "HOST": "localhost",
+    "PORT": "",
+}
+
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "aegee",
-        "USER": "patrick",
-        "PASSWORD": "erasmusmundus",
-        "HOST": "localhost",
-        "PORT": "",
-    }
-}
+    'default': db
+} 
 
 
 # Password validation
