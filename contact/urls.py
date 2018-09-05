@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import index
+from .views import index, message
 
 
 urlpatterns = [
-    path('', index)
+    path('', index),
+    path('message', message)
 ]
