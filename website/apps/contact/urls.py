@@ -1,9 +1,9 @@
 from django.urls import path
 
-from .views import index, message
+from .views import index, feedback
 
 
 urlpatterns = [
     path('', index),
-    path('message', message)
+    path('feedback', feedback)
 ]
