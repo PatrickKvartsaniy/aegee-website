@@ -1,10 +1,10 @@
 from django.db import models
 
-class Event(models.Model):
+class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    date = models.DateField()
-    event_type = models.CharField(max_length=256, choices=[('local', 'local'), ('international','international')])
+    start = models.DateField()
+    end = models.DateField()
     link = models.URLField(blank=True)
     image = models.ImageField(upload_to='events',blank=True)
 
