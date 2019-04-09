@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-import django_heroku
+# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +27,7 @@ SECRET_KEY = '(i10givxw9hhefeq_djopaq@5%jt__k_)=txwse3achhoyr30g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost","aegee-website.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1","localhost","aegee-website.herokuapp.com","aegee-kyiv.com.ua","0.0.0.0"]
 
 
 # Application definition
@@ -89,29 +89,20 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-if os.getenv('db') == 'production':
-    db = {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': "postgres",
-        "USER": "postgres",
-        "HOST": "db",
-        "PORT": "5432",
-    }
 
 db = {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': "aegee",
-    "USER": "patrick",
-    "PASSWORD": "erasmusmundus",
-    "HOST": "localhost",
-    "PORT": "",
+    "NAME":     os.getenv('SQL_DATABASE'),
+    "USER":     os.getenv('SQL_USER'),
+    "PASSWORD": os.getenv('SQL_PASSWORD'),
+    "HOST":     os.getenv('SQL_HOST'),
+    "PORT":     os.getenv('SQL_PORT'),
 }
+db["ENGINE"] = "django.db.backends.postgresql_psycopg2"
 
 
 DATABASES = {
     'default': db
 } 
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -161,4 +152,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'website/media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

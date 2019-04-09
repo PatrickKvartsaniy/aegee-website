@@ -8,4 +8,6 @@ WORKDIR /website
 
 ADD . /website/
 
-RUN pip install -r requirements.txt
+RUN pip install pipenv && pipenv install --system
+
+EXPOSE 8080
