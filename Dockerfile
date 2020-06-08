@@ -1,13 +1,17 @@
-FROM python:3
+FROM python:3.7-alpine
 
+WORKDIR /usr/src/app
+
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /website
+RUN apk update && apk add gcc musl-dev jpeg-dev zlib-dev
 
-WORKDIR /website
+COPY ./requirements.txt /usr/src/app/requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-ADD . /website/
-
-RUN pip install pipenv && pipenv install --system
+COPY . /usr/src/app/
 
 EXPOSE 8080
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
