@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.landing',
     'website.apps.events',
-     'website.apps.projects',
+    'website.apps.projects',
     'website.apps.contact',
     'website.apps.blog',
     'website.apps.about',
@@ -90,19 +90,12 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-db = {
-    "NAME":     os.getenv('SQL_DATABASE'),
-    "USER":     os.getenv('SQL_USER'),
-    "PASSWORD": os.getenv('SQL_PASSWORD'),
-    "HOST":     os.getenv('SQL_HOST'),
-    "PORT":     os.getenv('SQL_PORT'),
-}
-db["ENGINE"] = "django.db.backends.postgresql_psycopg2"
-
-
 DATABASES = {
-    'default': db
-} 
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -151,5 +144,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'website/media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# django_heroku.settings(locals())
