@@ -1,7 +1,7 @@
--i https://pypi.org/simple
+-i https://pypi.org/simple/
 django-suit==0.2.26
 django==2.1.1
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 gunicorn==19.9.0
 pillow==5.2.0
 pytz==2018.5
